@@ -1,0 +1,39 @@
+{
+  "name": "spotifymeta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "14.15.0"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "frontend/node_modules",
+    "backend/node_modules"
+  ],
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail \"npm run start_backend\" \"npm run start_frontend\"",
+    "start_backend": "cd backend && npm start",
+    "start_frontend": "cd frontend && npm start",
+    "install_backend_dependencies": "cd backend && npm install",
+    "install_frontend_dependencies": "cd frontend && npm install",
+    "install_dependencies": "\"npm run install_frontend_dependencies\" \"npm run install_backend_dependencies\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production cd frontend/ && npm install && npm run build",
+    "start-server": "cd backend/ && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagarrpandav/SpotifyMeta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sagarrpandav/SpotifyMeta/issues"
+  },
+  "homepage": "https://github.com/sagarrpandav/SpotifyMeta#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
